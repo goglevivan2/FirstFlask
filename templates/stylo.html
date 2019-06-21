@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Stylo Shop</title>
+    <link rel="stylesheet" type="text/css" href='{{ url_for("static", filename="stylo.css") }}' />
+     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script>
+        $(function() {
+    $('#btnSignUp').click(function() {
+
+        $.ajax({
+            url: '/bsk',
+            data: $('form').serialize(),
+            type: 'POST',
+            success: function(response) {
+                console.log(response);
+
+            },
+            error: function(error) {
+                console.log(error);
+            }
+        });
+    });
+});
+    </script>
+
+
+
+
+  </head>
+
+  <body>
+
+    <div class="container">
+      <div class="header">
+        <nav>
+
+        </nav>
+
+      </div>
+
+      <div class="jumbotron">
+        <form class="form-signin">
+         User:{{name}}
+            {%- for z in tovar %}
+
+             <p class="name">{{z[1]}}</p>
+        <img src = '{{ url_for("static", filename = z[4]) }}' alt = "{{z[6]}}">
+        <div class="cost">{{z[2]}} byn</div>
+         <label  class="onStock">На складе в данный момент:{{z[3]}}</label>
+        <label for="inputName" class="sr-only">Name</label>
+        <input type="number" name="btnBsk{{z[0]}}" id="inputName" min = 0 max={{z[3]}} class="form-control" placeholder="Сколько хотите купить" required autofocus>
+
+            {%- endfor %}
+             <button id="btnSignUp" class="btn btn-lg btn-primary btn-block" onclick='location.href ="http://127.0.0.1:5000/zakaz"'  type="button">Добавить в корзину</button>
+      </form>
+      </div>
+
+
+
+      <footer class="footer">
+        <p>&copy;ivangoglev</p>
+      </footer>
+
+    </div>
+  </body>
+</html>

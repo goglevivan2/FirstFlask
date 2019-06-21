@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Shop Store</title>
+    <!--
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script> -->
+    <link rel="stylesheet" type="text/css" href='{{ url_for("static", filename="stylo.css") }}' />
+
+
+
+</head>
+<body>
+
+<div class = "cart">
+    <p class="name">Товар</p>
+    <img src = '{{ url_for("static", filename="pen.jpg") }}' alt = "Ручка">
+    <div class="cost">25byn</div>
+    <button class = "add-to-cart">Добавить в корзину</button>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Stylo Store</title>
+    <link rel="stylesheet" type="text/css" href='{{ url_for("static", filename="shop.css") }}' />
+</head>
+<body>
+<div class = "cart">
+    <p class="name">Товар</p>
+    <img src = '{{ url_for("static", filename="pen.jpg") }}' alt = "Ручка">
+    <div class="cost">25byn</div>
+    <button class = "add-to-cart">Добавить в корзину</button>
+
+</div>
+</body>
+</html>

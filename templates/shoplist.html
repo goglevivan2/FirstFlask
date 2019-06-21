@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let db = new sqlite3.Database('./stylo.db');
+    let sql = "select * from Customers";
+    cur = db.cursor();
+    cur.execute(sql);
+    var rez = cur.fetchall();
+    alert(rez);
+    db.close();
+</script>
+</body>
+</html>
